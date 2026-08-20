@@ -5,13 +5,21 @@
 .
 ├╴trash/
 │ ├╴tests/
+│ │ ├╴images/
+│ │ │ ├╴test0.png
+│ │ │ ├╴test1.png
+│ │ │ ├╴test2-0.jpg
+│ │ │ └╴test2-1.jpg
 │ │ ├╴test0/
 │ │ │ ├╴boot.asm
-│ │ │ ├╴boot.bin
 │ │ │ └╴readme.txt
-│ │ └╴test1/
+│ │ ├╴test1/
+│ │ │ ├╴boot.asm
+│ │ │ └╴readme.txt
+│ │ └╴test2/
 │ │   ├╴boot.asm
-│ │   ├╴boot.bin
+│ │   ├╴kernel.c
+│ │   ├╴linker.ld
 │ │   └╴readme.txt
 │ ├╴helps.txt
 │ └╴readme.txt
