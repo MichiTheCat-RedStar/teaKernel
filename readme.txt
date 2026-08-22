@@ -9,14 +9,20 @@
 │ │ │ ├╴test0.png
 │ │ │ ├╴test1.png
 │ │ │ ├╴test2-0.jpg
-│ │ │ └╴test2-1.jpg
+│ │ │ ├╴test2-1.jpg
+│ │ │ └╴test3.jpg
 │ │ ├╴test0/
 │ │ │ ├╴boot.asm
 │ │ │ └╴readme.txt
 │ │ ├╴test1/
 │ │ │ ├╴boot.asm
 │ │ │ └╴readme.txt
-│ │ └╴test2/
+│ │ ├╴test2/
+│ │ │ ├╴boot.asm
+│ │ │ ├╴kernel.c
+│ │ │ ├╴linker.ld
+│ │ │ └╴readme.txt
+│ │ └╴test3/
 │ │   ├╴boot.asm
 │ │   ├╴kernel.c
 │ │   ├╴linker.ld
@@ -24,7 +30,8 @@
 │ ├╴helps.txt
 │ └╴readme.txt
 ├╴license.txt
-└╴readme.txt
+├╴readme.txt
+└╴roadmap.txt
 
 
 Лицензия: GNU GENERAL PUBLIC LICENSE
