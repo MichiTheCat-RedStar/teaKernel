@@ -3,43 +3,54 @@
 
 from pathlib import Path
 
-def makeTree():
-	mainPath = Path(input('Введите путь или относительный путь:\n').strip())
+def makeTree(path: str, dotpath=True) -> None:
+	mainPath = Path(path)
 	
+	# Проверяю на нарущение условий
 	if not mainPath.exists(): # йцукен не пройдёт, только реальные пути!
 		raise ValueError('Нет такого пути!')
 	elif not mainPath.is_dir(): # Файлы не папки
 		raise ValueError('Указана не папка!')
 	
-	rec_level = 0
-	def look(name, rec):
-		nonlocal rec_level
-		for child in name.iterdir():
-			
-			part_buffer = [x for x in child.parts]
-			for content in range(len(part_buffer)):
-				if part_buffer[content] == part_buffer[-2]:
-					part_buffer[content] = '├╴'
-				elif part_buffer[content] != part_buffer[-1]:
-					part_buffer[content] = '│ '
-			print(''.join(part_buffer))
-			# СТОП-ФЛАГ!!!
-			# Мой способ неправильный, нужно возвращаться к идеи буффера
-			# и представлять либо в виде 2D массива, чтобы иметь предс-
-			# тавление о строке следующей, либо вообще сделать иначе и
-			# использовать rec_level, уровень рекурсии, чтобы понять как
-			# глубока кролячья нора.. Писать код в час ночи было ошибкой
-			
+	# Рекурсивный спуск и создание списка с (имя, уровень_рекурсии)
+	tree, rec_index = [('.', 0)], 1 # 0 специально '.', а не mainPath!
+	def look(path):
+		nonlocal rec_index
+		for child in path.iterdir():
 			if child.is_dir():
-				rec_level += 1
-				#path_buffer.append((child, 'folder'))
-				look(child, rec)
-				rec_level -= 1
+				tree.append((f'{child.name}/', rec_index))
+				rec_index += 1
+				look(child)
+				rec_index -= 1
 			else:
-				...
-				#path_buffer.append((child, 'file'))
-	look(mainPath, rec_level)
+				tree.append((f'{child.name}', rec_index))
+	look(mainPath)
+	
+	if not tree:
+		return
+	if not dotpath: # Ладно, передумал
+		tree[0] = (str(mainPath), 0)
+	
+	# Создание дерева на основе списка
+	rec_index = 0 # Теперь указывает на "Актуальный" индекс для сверения <- Бесполезно?
+	for child_index in range(len(tree)): # '└╴', '├╴', '  ', '│ '
+		child_name, child_rec = tree[child_index] # для удобства
+		
+		# Работа с телом
+		print('│ '*(child_rec-1), end='')								# <- TODO + сделать argv путь и перенаправление stdin
+		
+		# Работа с хвостом
+		if child_index+1 < len(tree): # чтобы не выйти в IndexError
+			if tree[child_index+1][1] < child_rec:
+				print('└╴', end='')
+			elif child_index != 0:
+				print('├╴', end='')
+		else:
+			print('└╴', end='')
+		
+		print(child_name)
 
 if __name__ == '__main__':
-	makeTree()
+	print('MichiTheCat-RedStar - teaTree - MIT license (c) 2026.')
+	makeTree(input('Введите относительный путь: ').strip())
 	# Я теперь программирую в ФП?
