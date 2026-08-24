@@ -4,54 +4,86 @@
 Обратитесь к папке ./src/ или ./src/readme.md
 
 
-Представление дерева файлов: <устарело до teaTree>
+Представление дерева файлов:
 .
-├╴src/
-│ ├╴tealibs/
-│ │ ├╴teavideo.c
-│ │ └╴teavideo.h
+├╴license.txt
+├╴readme.txt
+├╴roadmap.txt
+├╴src
 │ ├╴boot.asm
 │ ├╴kernel.c
 │ ├╴linker.ld
-│ └╴readme.md
-├╴trash/
-│ ├╴tests/
-│ │ ├╴images/
-│ │ │ ├╴test0.png
-│ │ │ ├╴test1.png
-│ │ │ ├╴test2-0.jpg
-│ │ │ ├╴test2-1.jpg
-│ │ │ ├╴test3.jpg
-│ │ │ └╴test4.png
-│ │ ├╴test0/
-│ │ │ ├╴boot.asm
-│ │ │ └╴readme.txt
-│ │ ├╴test1/
-│ │ │ ├╴boot.asm
-│ │ │ └╴readme.txt
-│ │ ├╴test2/
-│ │ │ ├╴boot.asm
-│ │ │ ├╴kernel.c
-│ │ │ ├╴linker.ld
-│ │ │ └╴readme.txt
-│ │ ├╴test3/
-│ │ │ ├╴boot.asm
-│ │ │ ├╴kernel.c
-│ │ │ ├╴linker.ld
-│ │ │ └╴readme.txt
-│ │ └╴test4/
-│ │   ├╴tealibs/
-│ │   │ ├╴teavideo.c
-│ │   │ └╴teavideo.h
-│ │   ├╴boot.asm
-│ │   ├╴kernel.c
-│ │   ├╴linker.ld
-│ │   └╴readme.txt
-│ ├╴helps.txt
-│ └╴readme.txt
-├╴license.txt
-├╴readme.txt
-└╴roadmap.txt
+│ ├╴readme.md
+│ └╴tealibs
+│   ├╴teavideo.c
+│   └╴teavideo.h
+└╴trash
+  ├╴helps.txt
+  ├╴mylibc
+  │ ├╴License.txt
+  │ └╴ReadMe.txt
+  ├╴readme.txt
+  ├╴teaTree
+  │ ├╴License.txt
+  │ ├╴ReadMe.txt
+  │ ├╴teaTreeNotForUse.py
+  │ └╴teaTree.py
+  └╴tests
+    ├╴images
+    │ ├╴test0.png
+    │ ├╴test1.png
+    │ ├╴test2-0.jpg
+    │ ├╴test2-1.jpg
+    │ ├╴test3.jpg
+    │ ├╴test4.png
+    │ ├╴test5.jpg
+    │ └╴test6.jpg
+    ├╴test0
+    │ ├╴boot.asm
+    │ └╴readme.txt
+    ├╴test1
+    │ ├╴boot.asm
+    │ └╴readme.txt
+    ├╴test2
+    │ ├╴boot.asm
+    │ ├╴kernel.c
+    │ ├╴linker.ld
+    │ └╴readme.txt
+    ├╴test3
+    │ ├╴boot.asm
+    │ ├╴kernel.c
+    │ ├╴linker.ld
+    │ └╴readme.txt
+    ├╴test4
+    │ ├╴boot.asm
+    │ ├╴kernel.c
+    │ ├╴linker.ld
+    │ ├╴readme.txt
+    │ └╴tealibs
+    │   ├╴teavideo.c
+    │   └╴teavideo.h
+    ├╴test5
+    │ ├╴boot.asm
+    │ ├╴kernel.c
+    │ ├╴linker.ld
+    │ ├╴Makefile
+    │ ├╴readme.txt
+    │ └╴tealibs
+    │   ├╴teaprint.c
+    │   ├╴teaprint.h
+    │   ├╴teavideo.c
+    │   └╴teavideo.h
+    └╴test6
+      ├╴boot.asm
+      ├╴kernel.c
+      ├╴linker.ld
+      ├╴Makefile
+      ├╴readme.txt
+      └╴tealibs
+        ├╴teaprint.c
+        ├╴teaprint.h
+        ├╴teavideo.c
+        └╴teavideo.h
 
 
 Лицензия: GNU GENERAL PUBLIC LICENSE
