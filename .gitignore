@@ -1,0 +1,6 @@
+*.o
+*.elf
+*.iso
+*.bin
+*.d
+*.pyc

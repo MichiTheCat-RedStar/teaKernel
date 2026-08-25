@@ -73,8 +73,20 @@
     │   ├╴teaprint.h
     │   ├╴teavideo.c
     │   └╴teavideo.h
-    └╴test6
+    ├╴test6
+    │ ├╴boot.asm
+    │ ├╴kernel.c
+    │ ├╴linker.ld
+    │ ├╴Makefile
+    │ ├╴readme.txt
+    │ └╴tealibs
+    │   ├╴teaprint.c
+    │   ├╴teaprint.h
+    │   ├╴teavideo.c
+    │   └╴teavideo.h
+    └╴test7
       ├╴boot.asm
+      ├╴build.bat
       ├╴kernel.c
       ├╴linker.ld
       ├╴Makefile
