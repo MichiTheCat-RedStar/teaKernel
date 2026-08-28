@@ -37,7 +37,8 @@
     │ ├╴test3.jpg
     │ ├╴test4.png
     │ ├╴test5.jpg
-    │ └╴test6.jpg
+    │ ├╴test6.jpg
+    │ └╴test8.png
     ├╴test0
     │ ├╴boot.asm
     │ └╴readme.txt
@@ -84,7 +85,32 @@
     │   ├╴teaprint.h
     │   ├╴teavideo.c
     │   └╴teavideo.h
-    └╴test7
+    ├╴test7
+    │ ├╴boot.asm
+    │ ├╴build.bat
+    │ ├╴kernel.c
+    │ ├╴linker.ld
+    │ ├╴Makefile
+    │ ├╴readme.txt
+    │ └╴tealibs
+    │   ├╴teaprint.c
+    │   ├╴teaprint.h
+    │   ├╴teavideo.c
+    │   └╴teavideo.h
+    ├╴test8
+    │ ├╴boot.asm
+    │ ├╴build.bat
+    │ ├╴kernel.c
+    │ ├╴linker.ld
+    │ ├╴Makefile
+    │ ├╴readme.txt
+    │ └╴tealibs
+    │   ├╴teaio.h
+    │   ├╴teaprint.c
+    │   ├╴teaprint.h
+    │   ├╴teavideo.c
+    │   └╴teavideo.h
+    └╴test9
       ├╴boot.asm
       ├╴build.bat
       ├╴kernel.c
@@ -92,6 +118,9 @@
       ├╴Makefile
       ├╴readme.txt
       └╴tealibs
+        ├╴teaio.h
+        ├╴teakeyboard.c
+        ├╴teakeyboard.h
         ├╴teaprint.c
         ├╴teaprint.h
         ├╴teavideo.c
