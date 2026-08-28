@@ -31,6 +31,7 @@
   └╴tests
     ├╴images
     │ ├╴test0.png
+    │ ├╴test11.jpg
     │ ├╴test1.png
     │ ├╴test2-0.jpg
     │ ├╴test2-1.jpg
@@ -49,6 +50,23 @@
     ├╴test10
     │ ├╴boot.asm
     │ ├╴build.bat
+    │ ├╴kernel.c
+    │ ├╴linker.ld
+    │ ├╴Makefile
+    │ ├╴readme.txt
+    │ └╴tealibs
+    │   ├╴readme.txt
+    │   ├╴teaio.h
+    │   ├╴teakeyboard.c
+    │   ├╴teakeyboard.h
+    │   ├╴teaprint.c
+    │   ├╴teaprint.h
+    │   ├╴teavideo.c
+    │   └╴teavideo.h
+    ├╴test11
+    │ ├╴boot.asm
+    │ ├╴iso
+    │ │ └╴teaKernel.iso
     │ ├╴kernel.c
     │ ├╴linker.ld
     │ ├╴Makefile
