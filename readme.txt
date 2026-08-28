@@ -38,13 +38,30 @@
     │ ├╴test4.png
     │ ├╴test5.jpg
     │ ├╴test6.jpg
-    │ └╴test8.png
+    │ ├╴test8.png
+    │ └╴test9.png
     ├╴test0
     │ ├╴boot.asm
     │ └╴readme.txt
     ├╴test1
     │ ├╴boot.asm
     │ └╴readme.txt
+    ├╴test10
+    │ ├╴boot.asm
+    │ ├╴build.bat
+    │ ├╴kernel.c
+    │ ├╴linker.ld
+    │ ├╴Makefile
+    │ ├╴readme.txt
+    │ └╴tealibs
+    │   ├╴readme.txt
+    │   ├╴teaio.h
+    │   ├╴teakeyboard.c
+    │   ├╴teakeyboard.h
+    │   ├╴teaprint.c
+    │   ├╴teaprint.h
+    │   ├╴teavideo.c
+    │   └╴teavideo.h
     ├╴test2
     │ ├╴boot.asm
     │ ├╴kernel.c
