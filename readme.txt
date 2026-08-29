@@ -86,6 +86,21 @@
     │ ├╴kernel.elf
     │ ├╴linker.ld
     │ └╴readme.txt
+    ├╴test13
+    │ ├╴boot.asm
+    │ ├╴kernel.c
+    │ ├╴linker.ld
+    │ ├╴Makefile
+    │ ├╴readme.txt
+    │ └╴tealibs
+    │   ├╴readme.txt
+    │   ├╴teaio.h
+    │   ├╴teakeyboard.c
+    │   ├╴teakeyboard.h
+    │   ├╴teaprint.c
+    │   ├╴teaprint.h
+    │   ├╴teavideo.c
+    │   └╴teavideo.h
     ├╴test2
     │ ├╴boot.asm
     │ ├╴kernel.c
@@ -166,6 +181,7 @@
         ├╴teaprint.h
         ├╴teavideo.c
         └╴teavideo.h
+
 
 
 Лицензия: GNU GENERAL PUBLIC LICENSE
