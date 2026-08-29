@@ -80,6 +80,12 @@
     │   ├╴teaprint.h
     │   ├╴teavideo.c
     │   └╴teavideo.h
+    ├╴test12 (test2-j)
+    │ ├╴boot.asm
+    │ ├╴kernel.c
+    │ ├╴kernel.elf
+    │ ├╴linker.ld
+    │ └╴readme.txt
     ├╴test2
     │ ├╴boot.asm
     │ ├╴kernel.c
