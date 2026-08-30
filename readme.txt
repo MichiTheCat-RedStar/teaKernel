@@ -32,6 +32,8 @@
     ├╴images
     │ ├╴test0.png
     │ ├╴test11.jpg
+    │ ├╴test14-0.jpg
+    │ ├╴test14-1.jpg
     │ ├╴test1.png
     │ ├╴test2-0.jpg
     │ ├╴test2-1.jpg
@@ -94,6 +96,23 @@
     │ ├╴readme.txt
     │ └╴tealibs
     │   ├╴readme.txt
+    │   ├╴teaio.h
+    │   ├╴teakeyboard.c
+    │   ├╴teakeyboard.h
+    │   ├╴teaprint.c
+    │   ├╴teaprint.h
+    │   ├╴teavideo.c
+    │   └╴teavideo.h
+    ├╴test14
+    │ ├╴boot.asm
+    │ ├╴kernel.c
+    │ ├╴linker.ld
+    │ ├╴Makefile
+    │ ├╴readme.txt
+    │ └╴tealibs
+    │   ├╴readme.txt
+    │   ├╴teainput.c
+    │   ├╴teainput.h
     │   ├╴teaio.h
     │   ├╴teakeyboard.c
     │   ├╴teakeyboard.h
