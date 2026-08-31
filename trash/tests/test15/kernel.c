@@ -25,9 +25,9 @@ void kmain() {
 		
 		// Обработка команды
 		if (strcmp(user, "help") == 0) {
-			print_string("\nhelp     - show this message");
-			print_string("\nclear    - clear screen");
-			print_string("\nlicense  - show license");
+			print_string("\nhelp    - show this message");
+			print_string("\nclear   - clear screen");
+			print_string("\nlicense - show license");
 		} else if (strcmp(user, "clear") == 0) {
 			clear_screen();
 		} else if (strcmp(user, "license") == 0) {

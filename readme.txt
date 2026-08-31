@@ -11,9 +11,11 @@
 │ │ ├╴seabios.bin
 │ │ └╴vgabios.bin
 │ ├╴index.html
-│ ├╴kernel.bin
+│ ├╴kernel.iso
 │ ├╴libv86.js
-│ └╴third_party_licenses.txt
+│ ├╴third_party_licenses.txt
+│ ├╴v86-fallback.wasm
+│ └╴v86.wasm
 ├╴license.txt
 ├╴readme.txt
 ├╴roadmap.txt
@@ -150,7 +152,9 @@
     │ │ ├╴teaprint.h
     │ │ ├╴teavideo.c
     │ │ └╴teavideo.h
-    │ └╴third_party_licenses.txt
+    │ ├╴third_party_licenses.txt
+    │ ├╴v86-fallback.wasm
+    │ └╴v86.wasm
     ├╴test2
     │ ├╴boot.asm
     │ ├╴kernel.c
@@ -231,6 +235,7 @@
         ├╴teaprint.h
         ├╴teavideo.c
         └╴teavideo.h
+
 
 
 Лицензия: GNU GENERAL PUBLIC LICENSE
