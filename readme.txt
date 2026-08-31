@@ -6,6 +6,14 @@
 
 Представление дерева файлов:
 .
+├╴docs
+│ ├╴bios
+│ │ ├╴seabios.bin
+│ │ └╴vgabios.bin
+│ ├╴index.html
+│ ├╴kernel.bin
+│ ├╴libv86.js
+│ └╴third_party_licenses.txt
 ├╴license.txt
 ├╴readme.txt
 ├╴roadmap.txt
@@ -120,6 +128,29 @@
     │   ├╴teaprint.h
     │   ├╴teavideo.c
     │   └╴teavideo.h
+    ├╴test15
+    │ ├╴bios
+    │ │ ├╴seabios.bin
+    │ │ └╴vgabios.bin
+    │ ├╴boot.asm
+    │ ├╴index.html
+    │ ├╴kernel.c
+    │ ├╴libv86.js
+    │ ├╴linker.ld
+    │ ├╴Makefile
+    │ ├╴readme.txt
+    │ ├╴tealibs
+    │ │ ├╴readme.txt
+    │ │ ├╴teainput.c
+    │ │ ├╴teainput.h
+    │ │ ├╴teaio.h
+    │ │ ├╴teakeyboard.c
+    │ │ ├╴teakeyboard.h
+    │ │ ├╴teaprint.c
+    │ │ ├╴teaprint.h
+    │ │ ├╴teavideo.c
+    │ │ └╴teavideo.h
+    │ └╴third_party_licenses.txt
     ├╴test2
     │ ├╴boot.asm
     │ ├╴kernel.c
@@ -200,7 +231,6 @@
         ├╴teaprint.h
         ├╴teavideo.c
         └╴teavideo.h
-
 
 
 Лицензия: GNU GENERAL PUBLIC LICENSE
