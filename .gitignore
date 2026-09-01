@@ -1,6 +1,9 @@
 *.o
 *.elf
-*.iso
+# *.iso - думаю в tests/ все ISO не мусорные
 *.bin
 *.d
 *.pyc
+
+!docs/bios/*.bin
+!docs/kernels/*.iso
