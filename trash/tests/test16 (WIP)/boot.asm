@@ -5,7 +5,7 @@ dd 0x03
 dd -(0x1BADB002 + 0x03)
 
 section .text
-extern kmain
+extern teakmain
 global start
 start:
 	mov esp, stack_top

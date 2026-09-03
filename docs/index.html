@@ -1,29 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>MichiTheCat-RedStar teaKernel</title>
-	<style>
-		body { margin:0; background:#1e1e1e; display:flex; justify-content:center; align-items:center; height:100vh; }
-		#screen { width:800px; height:600px; background:#000; border:2px solid #444; }
-	</style>
-</head>
-<body>
-	<div id="screen"></div>
-	
-	<script src="libv86.js"></script>
-	<script>
-		var emulator = new V86({
-			screen_container: document.getElementById("screen"),
-			wasm_path: "v86.wasm",
-			bios: { url: "bios/seabios.bin" },
-			vga_bios: { url: "bios/vgabios.bin" },
-			cdrom: { url: "kernels/lastTeaKernel.iso" },
-			memory_size: 32 * 1024 * 1024,
-			autostart: true,
-			log_level: 2,
-			boot_order: ["cdrom"]
-		});
-	</script>
-</body>
-</html>
+<!doctype html>
+<title>MichiTheCat-RedStar - teaKernel</title>
+
+<meta charset="UTF-8">
+
+<script src="other/libv86.js"></script>
+<script>
+"use strict";
+
+window.onload = function()
+{
+	var emulator = window.emulator = new V86({
+		wasm_path: "other/v86.wasm",
+		memory_size: 32 * 1024 * 1024,
+		vga_memory_size: 2 * 1024 * 1024,
+		screen_container: document.getElementById("screen_container"),
+		bios: {
+			url: "bios/seabios.bin",
+		},
+		vga_bios: {
+			url: "bios/vgabios.bin",
+		},
+		cdrom: {
+			url: "kernels/teaKernel-15.iso",
+		},
+		autostart: true,
+	});
+}
+</script>
+
+<b>https://github.com/MichiTheCat-RedStar</b>
+
+<div id="screen_container">
+	<div style="white-space: pre; font: 14px monospace; line-height: 14px"></div>
+	<canvas style="display: none"></canvas>
+</div>
+
+<p>Ядро написано по basic примеру v86, я не умею во фронтенд, так что вот такие пироги из того, что я умею делать</p>
+<p>Ядро версии 0.15 здесь</p>
+<p>MichiTheCat-RedStar - GNU GENERAL PUBLIC LICENSE.</p>

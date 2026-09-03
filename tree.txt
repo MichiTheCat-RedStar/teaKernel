@@ -7,11 +7,13 @@
 │ │ └╴vgabios.bin
 │ ├╴index.html
 │ ├╴kernels
-│ │ └╴lastTeaKernel.iso
-│ ├╴libv86.js
-│ ├╴third_party_licenses.txt
-│ ├╴v86-fallback.wasm
-│ └╴v86.wasm
+│ │ └╴teaKernel-15.iso
+│ ├╴other
+│ │ ├╴libv86.js
+│ │ ├╴v86-fallback.wasm
+│ │ └╴v86.wasm
+│ ├╴readme.txt
+│ └╴third_party_licenses.txt
 ├╴license.txt
 ├╴readme.txt
 ├╴roadmap.txt
@@ -249,3 +251,4 @@
 │       ├╴teavideo.c
 │       └╴teavideo.h
 └╴tree.txt
+

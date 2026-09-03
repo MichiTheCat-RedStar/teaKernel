@@ -15,7 +15,7 @@ int strcmp(const char* a, const char* b) {
 void teakmain() {
 	clear_screen();
 	set_color(0xF0);
-	print_string("MichiTheCat-RedStar (c) 2026 - GPL-3.0\n");
+	print_string(" MichiTheCat-RedStar (c) 2026 - GPL-3.0 \n");
 	set_color(0x0F);
 	print_string("Write 'help':");
 	
