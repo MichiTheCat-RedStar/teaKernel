@@ -45,6 +45,12 @@ jobs:
           for test_dir in $(find trash/tests -mindepth 1 -maxdepth 1 -type d -name "test*" | sort); do
             echo "[☭] тестирую: $test_dir"
 
+            # Проверяю, есть ли Makefile
+            if [ ! -f "$test_dir/Makefile" ] && [ ! -f "$test_dir/makefile" ]; then
+              echo "[?] нет Makefile, пропускаю"
+              continue
+            fi
+
             # Сборка теста (сначала clean, если есть)
             echo "Собираю..."
             (cd "$test_dir" && \
