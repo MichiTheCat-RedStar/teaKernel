@@ -45,14 +45,15 @@ jobs:
           for test_dir in $(find trash/tests -mindepth 1 -maxdepth 1 -type d -name "test*" | sort); do
             echo "[☭] тестирую: $test_dir"
 
-            # Сборка теста
+            # Сборка теста (сначала clean, если есть)
             echo "Собираю..."
-            (cd "$test_dir" && make clean && make) || { echo "✗ ошибка в $test_dir"; FAILED=1; break; }
+            (cd "$test_dir" && \
+              if make -n clean 2>/dev/null; then make clean; fi && \
+              make) || { echo "[✗] ошибка в $test_dir"; FAILED=1; break; }
 
             # Проверяю, есть ли run в make, и если есть - запускаю в QEMU
             if (cd "$test_dir" && make -n run 2>/dev/null | grep -q "^qemu-system"); then
               echo "Запускаю в QEMU..."
-              # Запускаю и жду 10 секунд
               (cd "$test_dir" && timeout 15s make run -s) || {
                 EXIT_CODE=$?
                 if [ $EXIT_CODE -eq 124 ]; then
