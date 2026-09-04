@@ -1,4 +1,4 @@
-#include "teakeyboard.h"
+#include "../system/teakeyboard.h"
 #include "teavideo.h"
 #include <stdint.h>
 
@@ -12,6 +12,10 @@ static uint8_t buffer_arrow = 0; // Я вообще правильно дела�
 // Ввод с клавиатуры с обработкой \t и \b, а так же ENTER как ОТПРАВИТЬ
 char* input(void) {
 	while (1) {
+		set_color(0x07);
+		print_char('_');
+		set_color(0x0F);
+		print_char('\b');
 		char ch = read_char();
 		
 		if (buffer_arrow < 255) {
@@ -23,6 +27,8 @@ char* input(void) {
 			} else if (ch == '\b') {
 				if (buffer_arrow > 0) {
 					buffer[buffer_arrow] = '\0'; // ноль, чтобы не было лишего подсчёта пробелов в парсере
+					print_char(' ');
+					print_char('\b');
 					print_char('\b');
 					print_char(' ');
 					print_char('\b');
@@ -36,6 +42,8 @@ char* input(void) {
 		} else {
 			if (ch == '\b') { // Не даю печатать символы при переполнении, если это не \b для удаления
 				buffer[buffer_arrow] = '\0'; // ноль, чтобы не было лишего подсчёта пробелов в парсере
+				print_char(' ');
+				print_char('\b');
 				print_char('\b');
 				print_char(' ');
 				print_char('\b');
@@ -53,6 +61,7 @@ char* input(void) {
 		ret:
 		buffer[buffer_arrow] = '\0';
 		buffer_arrow = 0;
+		print_char(' ');
 		return buffer;
 	}
 }
