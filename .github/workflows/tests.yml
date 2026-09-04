@@ -1,0 +1,78 @@
+# Лицензия: GNU GENERAL PUBLIC LICENSE
+# Автор: MichiTheCat-RedStar (c) 2026
+
+# GitHub тестики сборки для trash/tests/test*
+
+# [✓]/[◎]/[?]/[○]/[✗];
+
+name: Run all tests with QEMU
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Забираю код
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Устанавливаю зависимости (nasm, gcc, qemu, xorriso, grub)
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y \
+            nasm \
+            gcc \
+            gcc-multilib \
+            make \
+            binutils \
+            xorriso \
+            grub-pc-bin \
+            qemu-system-x86 \
+            qemu-utils
+
+      # 3. Тесты для trash/tests/test*
+      - name: Build and run tests
+        run: |
+          set -e
+          FAILED=0
+          for test_dir in $(find trash/tests -mindepth 1 -maxdepth 1 -type d -name "test*" | sort); do
+            echo "[☭] тестирую: $test_dir"
+
+            # Сборка теста
+            echo "Собираю..."
+            (cd "$test_dir" && make clean && make) || { echo "✗ ошибка в $test_dir"; FAILED=1; break; }
+
+            # Проверяю, есть ли run в make, и если есть - запускаю в QEMU
+            if (cd "$test_dir" && make -n run 2>/dev/null | grep -q "^qemu-system"); then
+              echo "Запускаю в QEMU..."
+              # Запускаю и жду 10 секунд
+              (cd "$test_dir" && timeout 15s make run -s) || {
+                EXIT_CODE=$?
+                if [ $EXIT_CODE -eq 124 ]; then
+                  echo "[◎] QEMU ожидаю..."
+                else
+                  echo "[✗] ошибка QEMU в $test_dir (exit code $EXIT_CODE)"
+                  FAILED=1
+                  break
+                fi
+              }
+            else
+              echo "[?] нет 'run', пропускаю QEMU."
+            fi
+
+            echo "[✓] $test_dir успешен!"
+          done
+
+          if [ $FAILED -eq 1 ]; then
+            echo "[✗] некоторые тесты провалены."
+            exit 1
+          else
+            echo "[✓] все тесты успешны!"
+          fi
