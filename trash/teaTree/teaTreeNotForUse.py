@@ -6,7 +6,14 @@ output = output.replace('└── ', '└╴')
 output = output.replace('├── ', '├╴')
 output = output.replace('    ', '  ')
 output = output.replace('│   ', '│ ')
+output = output.split('\n')
+del output[-3:]
+output = '\n'.join(output)
 print(output)
-input()
+
+with open('../../tree.txt', 'w', encoding='utf-8') as f:
+	f.write('Тут представлено дерево всех файлов и папок для удобства:\n\n'+output)
+# input()
 
 # Уж если я работаю по принципу "Работает - не трогай" и не переписываю нормально, то хотя бы автоматизировать, чтобы вместо вывода перезаписовало ../../tree.txt, вставляя текст по умолчанию, а снизу уже дерево
+#  ^ Готово
